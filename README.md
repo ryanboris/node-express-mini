@@ -30,7 +30,7 @@ Now that we have a way to add, update, remove and retrieve data from the provide
 
 ### Start the API and Implement Requirements
 
-- To start the server, type `yarn start` or `npm start` from the root folder (where the _package.json_ file is). The server is configured to restart automatically as you make changes.
+- To start the server, type `yarn server` or `npm run server` from the root folder (where the _package.json_ file is). The server is configured to restart automatically as you make changes.
 - Add the code necessary to implement the API requirements.
 - **Test the API using _Postman_ as you work through the exercises.**
 
@@ -138,6 +138,15 @@ When the client makes a `PUT` request to `/api/users/:id`:
 
 ## Stretch Problems
 
-- Use `create-react-app` to create an application inside the root folder, name it `client`.
-- From the React application connect to the `/api/users` endpoint in the API and show the list of users.
+To work on the stretch problems you'll need to enable the `cors` middleware. Follow these steps:
+
+- add the `cors` npm module: `yarn add cors` or `npm i cors`.
+- add `server.use(cors())` after `server.use(express.json())`.
+
+Create a new React application and connect it to your server:
+
+- the React application can be anywhere, but, for this project create it inside the folder for the solution.
+- connect to the `/api/users` endpoint in the API and show the list of users.
+- add a delete button to each displayed user that will remove it from the server.
+- add forms to add and update data.
 - Style the list of users however you see fit.
